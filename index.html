@@ -5,72 +5,86 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <!-- bootstrap link -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
         integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <!-- css link -->
     <link rel="stylesheet" href="css/style.css">
-    <script src="https://www.gstatic.com/firebasejs/7.2.1/firebase-app.js"></script>
-    <script src="https://code.jquery.com/jquery-2.2.4.min.js"></script>
-    <title>Document</title>
+    <!-- google fonts link -->
+    <link href="https://fonts.googleapis.com/css?family=IBM+Plex+Serif&display=swap" rel="stylesheet">
+    <!-- momonets script link -->
+    <script src="https://cdn.jsdelivr.net/momentjs/2.12.0/moment.min.js"></script>
+    <!-- jquery script link -->
+    <script src="https://code.jquery.com/jquery-3.4.1.js"
+        integrity="sha256-WpOohJOqMqqyKL9FccASB9O0KwACQJpFTUBLTYOVvVU=" crossorigin="anonymous"></script>
+    <title>Train time app</title>
 </head>
 
 <body>
+    <!-- using bootstrap jumbotron to create banner -->
     <div class="container">
-        <div class="row">
-            <div class="col-md-12">
-                <div class="jumbotron jumbotron-fluid">
-                    <div class="container">
-                        <h1 class="display-4">Anytime is Train Time</h1>
-                    </div>
-                </div>
-            </div>
+        <div class="jumbotron">
+            <h1 class="text-center">Train Scheduler!!</h1>
         </div>
+        <!-- using a card with span of 12 col to append rows with new train shcedules -->
         <div class="row">
             <div class="col-md-12">
-                <div class="card">
-                    <h5 class="card-header">Current Train Schedule</h5>
+                <div class="card mb-4">
+                    <div class="card-header">Train Scheduel</div>
                     <div class="card-body">
-                        <ul id="info">
-                            <li id="Tname">Train Name</li>
-                            <li id="Tdestination">Destination</li>
-                            <li id="Tfrequency">Frequency (min)</li>
-                            <li id="nextTarrival">Next Arrival</li>
-                            <li id="minutes">Minutes Away</li>
-                        </ul>
+                        <table class="table table-sm table-hover" id='employee-table'>
+                            <thead id="add-row">
+                                <tr>
+                                    <th scope="col">Train Name</th>
+                                    <th scope="col">Destination</th>
+                                    <th scope="col">Frequency (min)</th>
+                                    <th scope="col">Next Arrival</th>
+                                    <th scope="col">minutes Away</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                            </tbody>
+                        </table>
                     </div>
                 </div>
             </div>
         </div>
+        <!-- adding new row with a card with span of 12 col to hold form -->
         <div class="row">
             <div class="col-md-12">
-                <div class="card cardOne">
-                    <h5 class="card-header">Add Train</h5>
+                <div class="card mb-4">
+                    <div class="card-header">Add Train</div>
                     <div class="card-body">
                         <form>
                             <div class="form-group">
-                                <label>Train Name</label>
-                                <input class="form-control" id="Ttrain">
+                                <label for="Train-name">Train Name</label>
+                                <input class="form-control" id="train-name" type="text">
                             </div>
                             <div class="form-group">
-                                <label>Destination</label>
-                                <input class="form-control" id="Tdestination">
+                                <label for="destination-input">Destination</label>
+                                <input class="form-control" id="destination" type="text">
                             </div>
                             <div class="form-group">
-                                <label>First Train Time (HH:mm - military time)</label>
-                                <input class="form-control" id="TfirstTrain">
+                                <label for="start-train">Frist Train (HH:mm - military time)</label>
+                                <input class="form-control" id="Ftrain" type="text">
                             </div>
                             <div class="form-group">
-                                <label>Frequency (min)</label>
-                                <input class="form-control" id="Tfrequency">
+                                <label for="frequency-input">Frequency (min)</label>
+                                <input class="form-control" id="frequency-input" type="text">
                             </div>
-                            <button type="submit" class="btn btn-primary">Submit</button>
+                            <button class="btn btn-primary float-right" id="add-train">Submit</button>
                         </form>
                     </div>
                 </div>
             </div>
         </div>
     </div>
+    <!-- section for javascript links -->
     <script src="javascript/app.js"></script>
-
+    <!-- firebase links main link has to go on top -->
+    <script src="https://www.gstatic.com/firebasejs/7.2.3/firebase-app.js"></script>
+    <!-- database product link i am using goes below main link -->
+    <script src="https://www.gstatic.com/firebasejs/7.2.3/firebase-database.js"></script>
 </body>
 
 </html>

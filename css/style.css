@@ -1,29 +1,10 @@
-ul#info li {
-  display:inline;
-}
-ul {
-    display: flex;
-    align-items: stretch;
-    justify-content: space-between;
-    width: 100%;
-    margin: 0;
-    padding: 0;
-}
-li {
-    display: block;
-    flex: 0 1 auto;
-    list-style-type: none;
+body{
+    background-color: black;
+    font-family: 'IBM Plex Serif', serif;
 }
 .jumbotron {
     border-radius: 5px;
     margin-top: 30px;
-}
-.cardOne{
-    margin-top: 30px;
-}
-#info{
-    padding: 5px;
-    border-bottom: 1px solid grey;
 }
 h1{
     text-align: center;
